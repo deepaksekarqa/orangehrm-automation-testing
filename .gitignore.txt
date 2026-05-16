@@ -1,0 +1,15 @@
+/target/
+/test-output/
+/.settings/
+/bin/
+
+*.class
+*.log
+*.tmp
+
+chromedriver.exe
+geckodriver.exe
+msedgedriver.exe
+
+.classpath
+.project
