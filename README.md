@@ -50,22 +50,31 @@ This project demonstrates **Apache POI + @DataProvider** integration reading emp
 
 ```
 OrangeHRMAutomation/
-├── src/
-│   ├── main/java/
-│   │   ├── base/
-│   │   │   └── BaseClass.java          ← static WebDriver, @BeforeClass, @AfterClass
-│   │   └── pages/
-│   │       ├── LoginPage.java          ← Login module
-│   │       ├── DashboardPage.java      ← Dashboard module
-│   │       ├── EmployeePage.java       ← Add & Search Employee module
-│   │       └── LogoutPage.java         ← Logout module
-│   └── test/java/
-│       └── tests/
-│           └── OrangeHRMTests.java     ← 5 @Test methods + @DataProvider
-├── testData/
-│   └── EmployeeData.xlsx               ← Test data file (3 employee records)
-├── pom.xml
-└── testng.xml
+├── pom.xml                           ← Maven build & dependency configuration 
+├── testng.xml                         ← TestNG suite configuration              
+├── testdata/
+│   └── EmployeeData.xlsx             ← Excel test data file                   
+├── drivers/                           ← ChromeDriver executable
+├── screenshots/                       ← Auto-created; stores test screenshots
+└── src/
+    ├── main/
+    │   └── java/
+    │       ├── base/
+    │       │   └── BaseClass.java     ← WebDriver setup & teardown              
+    │       ├── pages/
+    │       │   ├── LoginPage.java
+    │       │   ├── DashboardPage.java
+    │       │   ├── PIMPage.java
+    │       │   ├── AddEmployeePage.java
+    │       │   ├── EmployeeListPage.java
+    │       │   └── LogoutPage.java
+    │       └── utils/
+    │           ├── ScreenshotUtils.java
+    │           └── ExcelUtils.java    ← Apache POI Excel reader               
+    └── test/
+        └── java/
+            └── tests/
+                └── TestRun.java       ← TestNG test class (replaces main()) 
 ```
 
 ---
